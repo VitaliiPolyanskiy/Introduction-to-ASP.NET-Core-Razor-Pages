@@ -1,0 +1,21 @@
+﻿@page
+@model RazorPagesApp.Pages.UploadFileModel
+
+@{
+    ViewData["Title"] = "Добавление файла";
+}
+<h3>Выберите файл для загрузки</h3>
+
+@*Благодаря установке атрибута формы enctype="multipart/form-data" 
+браузер будет знать, что вместе с формой надо передать файл.*@
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="uploadedFile" /><br>
+    <input type="submit" value="Загрузить" />
+</form>
+
+<h3>Все файлы</h3>
+@foreach (var f in Model.filemodel)
+{
+    <p><img src="@Url.Content(f.Path)"></p>
+}
