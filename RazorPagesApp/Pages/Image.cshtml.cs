@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace RazorPagesApp.Pages
+namespace RazorPagesApp.Pages;
+
+public class ImageModel : PageModel
 {
-    public class ImageModel : PageModel
+    public string Message { get; private set; } = string.Empty;
+
+    public void OnGet()
     {
-        public string Message { get; private set; } = "";
-        public void OnGet()
-        {
-            Message = "Изображения в приложениях ASP.NET Core Razor Pages";
-        }
+        Message = "Зображення в застосунках ASP.NET Core Razor Pages";
     }
 }

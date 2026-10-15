@@ -1,10 +1,12 @@
 ﻿@page
 @model RazorPagesApp.Pages.ImageModel
 
-<div>
-    <h1 style="text-align:center; padding-top:40px">@Model.Message</h1>
-    <p style="text-align:center"><img src="~/Images/ASP.NET Core MVC.png" /> </p>
-    <p style="text-align:center">
+<div class="text-center mt-5">
+    <h1>@Model.Message</h1>
+    <p>
+        <img src="~/Images/ASP.NET Core MVC.png" alt="ASP.NET Core MVC" class="img-fluid" /> 
+    </p>
+    <p>
         <audio id="drums" controls>
             <source src="/sounds/ogg/drums.ogg" type="audio/ogg">
             <source src="/sounds/mp3/drums.mp3" type="audio/mpeg">

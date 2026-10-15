@@ -2,18 +2,22 @@ using Microsoft.EntityFrameworkCore;
 using RazorPagesApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-// Получаем строку подключения из файла конфигурации
+
+// Отримуємо рядок підключення з файлу конфігурації
 string? connection = builder.Configuration.GetConnectionString("DefaultConnection");
 
-// добавляем контекст ApplicationContext в качестве сервиса в приложение
+// Додаємо контекст ApplicationContext як сервіс у застосунок
 builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
-// Добавляем в приложение сервисы Razor Pages
+
+// Додаємо в застосунок сервіси Razor Pages
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
-app.UseStaticFiles(); // обрабатывает запросы к файлам в папке wwwroot
 
-// Добавляем поддержку маршрутизации для Razor Pages
+// Обробляє запити до файлів у папці wwwroot
+app.UseStaticFiles();
+
+// Додаємо підтримку маршрутизації для Razor Pages
 app.MapRazorPages();
 
 app.Run();

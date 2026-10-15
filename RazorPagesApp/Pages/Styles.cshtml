@@ -1,19 +1,23 @@
 ﻿@page
 @model RazorPagesApp.Pages.StylesModel
-<section class="section">
+
+<section class="mt-5">
     <div class="container">
-        <div class="request">
-            <h1 class="request__heading">To do list</h1>
-            <div class="request__card">
-                <span class="request__name">Task name</span>
-                <input class="request__input-name" type="text" required>
+        <div class="card shadow-sm p-4 mb-4">
+            <h1 class="mb-4">Список завдань</h1>
+            
+            <div class="mb-3">
+                <label class="form-label fw-bold">Назва завдання</label>
+                <input class="form-control" type="text" required>
             </div>
-            <div class="request__card">
-                <span class="request__tittle">Task tittle</span>
-                <textarea class="request__input-tittle" rows="3" required></textarea>
+            
+            <div class="mb-3">
+                <label class="form-label fw-bold">Опис завдання</label>
+                <textarea class="form-control" rows="3" required></textarea>
             </div>
-            <button class="request__button">Create task</button>
+            
+            <button class="btn btn-primary">Створити завдання</button>
         </div>
-        <ul class="tasks"></ul>
+        <ul class="list-group"></ul>
     </div>
 </section>
